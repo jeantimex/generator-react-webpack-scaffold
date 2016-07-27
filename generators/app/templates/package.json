@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-boilerplate",
-  "version": "1.0.0",
-  "description": "React webpack boilerplate.",
+  "name": "<%= name %>",
+  "version": "<%= version %>",
+  "description": "<%= desc %>",
   "main": "index.js",
   "scripts": {
     "build": "npm run clean && node_modules/.bin/webpack --config webpack.config.production.js",
@@ -10,10 +10,6 @@
     "lint": "node_modules/.bin/eslint ./src",
     "start": "node server.js",
     "test": "npm run lint && node_modules/.bin/karma start --single-run --no-auto-watch karma.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jeantimex/react-webpack-boilerplate.git"
   },
   "keywords": [
     "react",
@@ -28,12 +24,8 @@
     "webpack",
     "karma"
   ],
-  "author": "Yong Su (https://github.com/jeantimex)",
+  "author": "<%= author %>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jeantimex/react-webpack-boilerplate/issues"
-  },
-  "homepage": "https://github.com/jeantimex/react-webpack-boilerplate",
   "dependencies": {
     "babel-runtime": "^6.9.2",
     "react": "^15.1.0",

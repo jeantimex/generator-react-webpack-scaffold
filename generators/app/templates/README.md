@@ -1,2 +1,3 @@
-# React Webpack Boilerplate
+# <%= name %>
 
+<%= desc %>

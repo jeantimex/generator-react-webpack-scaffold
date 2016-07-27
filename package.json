@@ -1,8 +1,11 @@
 {
   "name": "generator-react-webpack-scaffold",
-  "version": "0.0.0",
-  "description": "Generate the boilerplate for writing React application.",
+  "version": "1.0.0",
+  "description": "Yeoman generator for generating the boilerplate of React Webpack application with Karma Mocha testing frameworks.",
   "homepage": "https://github.com/jeantimex/generator-react-webpack-scaffold",
+  "bugs": {
+    "url": "https://github.com/jeantimex/generator-react-webpack-scaffold/issues"
+  },
   "author": {
     "name": "Yong Su",
     "email": "jean.timex@gmail.com",
@@ -13,17 +16,17 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "React",
-    "Webpack",
-    "Boilerplate",
-    "Scaffold",
-    "ES6",
-    "Karma",
-    "Mocha",
-    "Sinon",
-    "Enzyme",
-    "Coverage",
-    "yeoman-generator"
+    "yeoman-generator",
+    "react",
+    "webpack",
+    "boilerplate",
+    "scaffold",
+    "es6",
+    "karma",
+    "mocha",
+    "sinon",
+    "enzyme",
+    "coverage"
   ],
   "dependencies": {
     "yeoman-generator": "^0.23.0",
@@ -51,7 +54,10 @@
       "mocha": true
     }
   },
-  "repository": "https://github.com/jeantimex/generator-react-webpack-scaffold.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeantimex/generator-react-webpack-scaffold.git"
+  },
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp test"

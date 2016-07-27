@@ -62,7 +62,7 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp test",
-    "coveralls": "npm run test && cat ./coverage/lcov-report/lcov.info | coveralls"
+    "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls"
   },
   "license": "MIT"
 }

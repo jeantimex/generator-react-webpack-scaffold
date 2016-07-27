@@ -1,29 +1,34 @@
 # React Webpack Scaffold
 
-[![Node version](https://img.shields.io/badge/node-v4%20%7C%20v5%20%7C%20v6-orange.svg)](https://img.shields.io/badge/node-v4%20%7C%20v5%20%7C%20v6-orange.svg)
+[![NPM Version](https://img.shields.io/badge/npm-v2%20%7C%20v3-red.svg)](https://img.shields.io/badge/npm-v2%20%7C%20v3-red.svg)
+[![Node Version](https://img.shields.io/badge/node-v4%20%7C%20v5%20%7C%20v6-orange.svg)](https://img.shields.io/badge/node-v4%20%7C%20v5%20%7C%20v6-orange.svg)
 [![Build Status](https://travis-ci.org/jeantimex/generator-react-webpack-scaffold.svg?branch=master)](https://travis-ci.org/jeantimex/generator-react-webpack-scaffold)
 [![Coverage Status](https://coveralls.io/repos/github/jeantimex/generator-react-webpack-scaffold/badge.svg?branch=master)](https://coveralls.io/github/jeantimex/generator-react-webpack-scaffold?branch=master)
 
 ![Yeoman](http://jinandsu.net/generator-react-webpack-scaffold/yeoman-masthead.png)
 
-A Yeoman generator that scaffolds React application with Webpack.
+A Yeoman generator that scaffolds React project with Webpack, Karma and more useful tools for you to write React application and unit tests.
 
 ##How to use##
 
 **Step 1**. Install [Yeoman](http://yeoman.io/)
 ```
-npm install -g yo
+$ npm install -g yo
 ```
 
-**Step 2**. Clone this project, inside the project, run
+**Step 2**. Run `yo` in an empty project folder
 ```
-npm link
+$ yo
 ```
-At the time of writing, this generator is not in Yeoman generator list yet, once it's there, step 2 can be skipped.
+Yeoman will ask "What would you like to do?", select **Install a generator** from the list, then search for **react-webpack-scaffold**.
+```
+Search npm for generators: react-webpack-scaffold
+```
+once it's found, install it.
 
-**Step 3**. Run `react-webpack-scaffold` in your other project folder
+**Step 3**. Run `yo react-webpack-scaffold` in the project folder
 ```
-yo react-webpack-scaffold
+$ yo react-webpack-scaffold
 ```
 
 ![Demo](http://jinandsu.net/generator-react-webpack-scaffold/command.png)

@@ -2,6 +2,7 @@
 
 [![Node version](https://img.shields.io/badge/node-v4%20%7C%20v5%20%7C%20v6-orange.svg)](https://img.shields.io/badge/node-v4%20%7C%20v5%20%7C%20v6-orange.svg)
 [![Build Status](https://travis-ci.org/jeantimex/generator-react-webpack-scaffold.svg?branch=master)](https://travis-ci.org/jeantimex/generator-react-webpack-scaffold)
+[![Coverage Status](https://coveralls.io/repos/github/jeantimex/generator-react-webpack-scaffold/badge.svg?branch=master)](https://coveralls.io/github/jeantimex/generator-react-webpack-scaffold?branch=master)
 
 ![Yeoman](http://jinandsu.net/generator-react-webpack-scaffold/yeoman-masthead.png)
 

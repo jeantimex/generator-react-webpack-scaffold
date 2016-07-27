@@ -14,7 +14,13 @@ A Yeoman generator that scaffolds React application with Webpack.
 npm install -g yo
 ```
 
-**Step 2**. Run `react-webpack-scaffold` in your project folder
+**Step 2**. Clone this project, inside the project, run
+```
+npm link
+```
+At the time of writing, this generator is not in Yeoman generator list yet, once it's there, step 2 can be skipped.
+
+**Step 3**. Run `react-webpack-scaffold` in your other project folder
 ```
 yo react-webpack-scaffold
 ```

@@ -54,7 +54,7 @@
   "repository": "https://github.com/jeantimex/generator-react-webpack-scaffold.git",
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "gulp test"
   },
   "license": "MIT"
 }

@@ -5,6 +5,8 @@
 [![Build Status](https://travis-ci.org/jeantimex/generator-react-webpack-scaffold.svg?branch=master)](https://travis-ci.org/jeantimex/generator-react-webpack-scaffold)
 [![Coverage Status](https://coveralls.io/repos/github/jeantimex/generator-react-webpack-scaffold/badge.svg?branch=master)](https://coveralls.io/github/jeantimex/generator-react-webpack-scaffold?branch=master)
 
+[![NPM](https://nodei.co/npm/generator-react-webpack-scaffold.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/generator-react-webpack-scaffold/)
+
 ![Yeoman](http://jinandsu.net/generator-react-webpack-scaffold/yeoman-masthead.png)
 
 A Yeoman generator that scaffolds React project with Webpack, Karma and more useful tools for you to write React application and unit tests.

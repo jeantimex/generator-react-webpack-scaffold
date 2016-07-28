@@ -16,20 +16,12 @@ A Yeoman generator that scaffolds React project with Webpack, Karma and more use
 **Step 1**. Install [Yeoman](http://yeoman.io/)
 ```
 $ npm install -g yo
+$ npm install -g generator-react-webpack-scaffold
 ```
 
-**Step 2**. Run `yo` in an empty project folder
+**Step 2**. Run `yo react-webpack-scaffold` in an empty project folder
 ```
-$ yo
-```
-Yeoman will ask "What would you like to do?", select **Install a generator** from the list, then search for **react-webpack-scaffold**.
-```
-Search npm for generators: react-webpack-scaffold
-```
-once it's found, install it.
-
-**Step 3**. Run `yo react-webpack-scaffold` in the project folder
-```
+$ cd your-empty-project-folder
 $ yo react-webpack-scaffold
 ```
 

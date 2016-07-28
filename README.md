@@ -1,4 +1,4 @@
-# React Webpack Scaffold
+#React Webpack Scaffold
 
 [![NPM Version](https://img.shields.io/badge/npm-v2%20%7C%20v3-red.svg)](https://www.npmjs.com/package/generator-react-webpack-scaffold)
 [![Node Version](https://img.shields.io/badge/node-v4%20%7C%20v5%20%7C%20v6-orange.svg)](https://img.shields.io/badge/node-v4%20%7C%20v5%20%7C%20v6-orange.svg)
@@ -11,7 +11,7 @@
 
 A Yeoman generator that scaffolds React project with Webpack, Karma and more useful tools for you to write React application and unit tests.
 
-##How to use##
+##How to install
 
 **Step 1**. Install [Yeoman](http://yeoman.io/)
 ```
@@ -35,7 +35,11 @@ $ yo react-webpack-scaffold
 
 ![Demo](http://jinandsu.net/generator-react-webpack-scaffold/command.png)
 
-That's it! Now you have a fully functional React project with the following features:
+That's it! Now you have a fully functional React project.
+
+##Features
+
+The scaffolded project has the following features:
 
 - [React](https://facebook.github.io/react/)
 - [Webpack](https://webpack.github.io/) and Webpack dev server
@@ -45,7 +49,7 @@ That's it! Now you have a fully functional React project with the following feat
 - Coverage report [isparta](https://github.com/douglasduteil/isparta)
 - Test with [Enzyme](https://github.com/airbnb/enzyme) and [Sinon](http://sinonjs.org/)
 
-## React
+###React
 
 The following features are supported:
 
@@ -92,7 +96,7 @@ import './styles.scss';
 const App = () => <div />;
 ```
 
-##Test##
+###Test
 
 **Assert & Expect**
 ```javascript
@@ -123,7 +127,7 @@ describe('Testing', () => {
 });
 ```
 
-##Coverage Report
+###Coverage Report
 
 Code coverage report is geneated by `istanbul`. `npm run coveralls` will submit the coverage report to coveralls.io.
 
@@ -139,33 +143,34 @@ Lines        : 100% (  6/6  ) Threshold : 90%
 
 HTML and lcov reports can be found in the coverage folder.
 
-## How to use this package
-Download or clone the package, then
+##What can you do in the scaffolded project
+
+###Running
+Run the project in webpack dev server
 ```
-npm install
 npm start
 ```
-navigate to `http://localhost:5000` in your browser.
+then navigate to `http://localhost:5000` in your browser.
 
-## Linting
+###Linting
 ESLint with React linting options have been enabled.
 ```
 npm run lint
 ```
 
-## Testing
+###Testing
 Start Karma test runner.
 ```
 npm run test
 ```
 
-## Building
+###Building
 Build files for production
 ```
 npm run build
 ```
 
-## Clean
+###Cleaning
 Remove dist and coverage folders
 ```
 npm run clean

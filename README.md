@@ -41,15 +41,14 @@ That's it! Now you have a fully functional React project.
 
 The scaffolded project has the following features:
 
-- [React](https://facebook.github.io/react/)
+- [React](https://facebook.github.io/react/) (ES6 with [Babel](https://babeljs.io/))
 - [Webpack](https://webpack.github.io/) and Webpack dev server
-- ES6 with [Babel](https://babeljs.io/)
-- Sass loader
-- [Karma](https://karma-runner.github.io/1.0/index.html) + [Mocha](https://mochajs.org/)
+- [Sass loader](https://github.com/jtangelder/sass-loader)
+- [Karma](https://karma-runner.github.io/1.0/index.html) + [Mocha](https://mochajs.org/) + [Chai](http://chaijs.com/)
+- Unit test with [Enzyme](https://github.com/airbnb/enzyme) and [Sinon](http://sinonjs.org/)
 - Coverage report [isparta](https://github.com/douglasduteil/isparta)
-- Test with [Enzyme](https://github.com/airbnb/enzyme) and [Sinon](http://sinonjs.org/)
 
-###React
+###1. React
 
 The following features are supported:
 
@@ -96,8 +95,13 @@ import './styles.scss';
 const App = () => <div />;
 ```
 
-###Test
+###2. Webpack dev server
+When you run your project by `npm start`, webpack dev server watches the source files for changes and when changes are made the bundle will be recompiled.
 
+###3. Sass loader
+You can define styles for individual React components using `import`. The good thing about importing styles is that you can define some base styles and import them for component-level styles.
+
+###4. Unit test
 **Assert & Expect**
 ```javascript
 import { assert, expect } from 'chai';
@@ -127,9 +131,10 @@ describe('Testing', () => {
 });
 ```
 
-###Coverage Report
+###5. Coverage Report
+Code coverage report is geneated by `istanbul`. `npm run coveralls` will submit the coverage report to [coveralls.io](https://coveralls.io/).
 
-Code coverage report is geneated by `istanbul`. `npm run coveralls` will submit the coverage report to coveralls.io.
+You can setup passing thresholds for statements, branches, functions and lines.
 
 **Example**:
 ```
@@ -141,36 +146,37 @@ Lines        : 100% (  6/6  ) Threshold : 90%
 ================================================================================
 ```
 
-HTML and lcov reports can be found in the coverage folder.
+The HTML and lcov reports can be found in the coverage folder.
 
 ##What can you do in the scaffolded project
 
-###Running
-Run the project in webpack dev server
+###1. Run the project
+Launch webpack dev server
 ```
 npm start
 ```
 then navigate to `http://localhost:5000` in your browser.
 
-###Linting
+###2. Lint js and scss source codes
 ESLint with React linting options have been enabled.
 ```
 npm run lint
 ```
 
-###Testing
+###3. Unit test
 Start Karma test runner.
 ```
 npm run test
 ```
+Coverage report will be generated.
 
-###Building
+###4. Build the bundle
 Build files for production
 ```
 npm run build
 ```
 
-###Cleaning
+###5. Clean workspace
 Remove dist and coverage folders
 ```
 npm run clean

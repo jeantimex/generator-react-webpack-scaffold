@@ -34,6 +34,7 @@ That's it! Now you have a fully functional React project.
 The scaffolded project has the following features:
 
 - [React](https://facebook.github.io/react/) (ES6 with [Babel](https://babeljs.io/))
+- [React Intl](https://github.com/yahoo/react-intl) (v2.0.x)
 - [Webpack](https://webpack.github.io/) and Webpack dev server
 - [Sass loader](https://github.com/jtangelder/sass-loader)
 - [Karma](https://karma-runner.github.io/1.0/index.html) + [Mocha](https://mochajs.org/) + [Chai](http://chaijs.com/)
@@ -87,13 +88,48 @@ import './styles.scss';
 const App = () => <div />;
 ```
 
-###2. Webpack dev server
+###2. Localization
+
+We use Yahoo's React Intl (v2.0) library to support localization. To support new language, follow the steps below:
+
+**Step 1**. Update `scripts/translate.js` and add new locale, e.g. `ja-JP`.
+```javascript
+const LANGS = [
+    'en-US',
+    'ja-JP',
+    'fr-FR',
+    'zh-CN',
+];
+```
+
+**Step 2**. Run `npm build` to generate the i18n JSON file `i18n/ja-JP.json`. Since it's a new locale, `ja-JP.json` contains the same ids and messages as in `en-US.json`. Translate the messages in `ja-JP.json`.
+
+**Step 3**. Update `src/app.js` and import the `ja-JP.json`.
+```javascript
+import ja from 'react-intl/locale-data/ja';
+import jaMessages from '../i18n/ja-JP.json';
+addLocaleData(ja);
+
+let locale = 'ja';
+let messages = jaMessages;
+const App = () => (
+    <IntlProvider
+        locale={ locale }
+        messages={ messages }
+    >
+    ...
+    </IntlProvider>
+);
+```
+Note: You can have multiple locales and change the locale and messages based on navigator.language or your custom settings.
+
+###3. Webpack dev server
 When you run your project by `npm start`, webpack dev server watches the source files for changes and when changes are made the bundle will be recompiled.
 
-###3. Sass loader
+###4. Sass loader
 You can define styles for individual React components using `import`. The good thing about importing styles is that you can define some base styles and import them for component-level styles.
 
-###4. Unit test
+###5. Unit test
 **Assert & Expect**
 ```javascript
 import { assert, expect } from 'chai';
@@ -123,7 +159,7 @@ describe('Testing', () => {
 });
 ```
 
-###5. Coverage Report
+###6. Coverage Report
 Code coverage report is geneated by `istanbul`. `npm run coveralls` will submit the coverage report to [coveralls.io](https://coveralls.io/).
 
 You can setup passing thresholds for statements, branches, functions and lines.

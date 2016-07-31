@@ -21,6 +21,10 @@ module.exports = yeoman.Base.extend({
       message: 'Description',
       default: 'About this project'
     }, {
+      type: 'confirm',
+      name: 'isLocalizationEnabled',
+      message: 'Localization support?'
+    }, {
       type: 'input',
       name: 'version',
       message: 'Version',
@@ -38,23 +42,41 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
+    // Make the name dash-separated
+    var name = this.props.name;
+    name = name.toLocaleLowerCase().split(' ').join('-');
+
+    var feature = this.props.isLocalizationEnabled ? 'intl' : 'basic';
+
+    // Copy all non-dotfiles in common
+    this.fs.copy(
+      this.templatePath('common/**/*'),
+      this.destinationRoot()
+    );
+
+    // Copy all dotfiles in common
+    this.fs.copy(
+      this.templatePath('common/.*'),
+      this.destinationRoot()
+    );
+
     // Copy all non-dotfiles
     this.fs.copy(
-      this.templatePath('static/**/*'),
+      this.templatePath(feature + '/static/**/*'),
       this.destinationRoot()
     );
 
     // Copy all dotfiles
     this.fs.copy(
-      this.templatePath('static/.*'),
+      this.templatePath(feature + '/static/.*'),
       this.destinationRoot()
     );
 
     // Copy package.json
     this.fs.copyTpl(
-      this.templatePath('package.json'),
+      this.templatePath(feature + '/package.json'),
       this.destinationPath('package.json'), {
-        name: this.props.name,
+        name: name,
         desc: this.props.desc,
         author: this.props.author,
         version: this.props.version
@@ -63,7 +85,7 @@ module.exports = yeoman.Base.extend({
 
     // Copy README.md
     this.fs.copyTpl(
-      this.templatePath('README.md'),
+      this.templatePath('common/README.md'),
       this.destinationPath('README.md'), {
         name: this.props.name,
         desc: this.props.desc

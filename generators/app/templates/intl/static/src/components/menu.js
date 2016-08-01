@@ -30,15 +30,16 @@ export class Menu extends Component {
     static propTypes = {
         intl: intlShape,
         className: PropTypes.string,
+        onSelect: PropTypes.func,
     };
 
-    constructor(props) {
-        super(props);
+    onSelectHandler = e => {
+        const { onSelect } = this.props;
 
-        this.state = {
-            isVisible: false,
-        };
-    }
+        if (onSelect) {
+            onSelect(e);
+        }
+    };
 
     render() {
         const { formatMessage } = this.props.intl;
@@ -51,9 +52,21 @@ export class Menu extends Component {
                     description='greeting message'
                 />
                 <ul>
-                    <li><a href='#'>{ formatMessage(messages.file) }</a></li>
-                    <li><a href='#'>{ formatMessage(messages.edit) }</a></li>
-                    <li><a href='#'>{ formatMessage(messages.help) }</a></li>
+                    <li>
+                        <a href='#' onClick={ this.onSelectHandler }>
+                            { formatMessage(messages.file) }
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#' onClick={ this.onSelectHandler }>
+                            { formatMessage(messages.edit) }
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#' onClick={ this.onSelectHandler }>
+                            { formatMessage(messages.help) }
+                        </a>
+                    </li>
                 </ul>
             </div>
         );

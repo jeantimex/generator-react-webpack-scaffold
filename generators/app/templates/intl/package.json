@@ -4,9 +4,10 @@
   "description": "<%= desc %>",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:bundle && npm run build:langs",
-    "build:bundle": "npm run clean && node_modules/.bin/webpack --config webpack.config.production.js",
-    "build:langs": "babel-node scripts/translate.js",
+    "release": "npm run clean && npm run translate && node ./scripts/release.js",
+    "build": "npm run translate && npm run webpack",
+    "translate": "npm run webpack && babel-node scripts/translate.js",
+    "webpack": "./node_modules/.bin/webpack",
     "clean": "rm -rf dist coverage messages",
     "coveralls": "npm run test && cat ./coverage/lcov/lcov.info | coveralls",
     "lint": "node_modules/.bin/eslint ./src",
@@ -24,7 +25,8 @@
     "es6",
     "babel",
     "webpack",
-    "karma"
+    "karma",
+    "localization"
   ],
   "author": "<%= author %>",
   "license": "MIT",
@@ -35,6 +37,7 @@
     "react-intl": "^2.0.1"
   },
   "devDependencies": {
+    "async": "^2.0.1",
     "autoprefixer": "^6.3.7",
     "babel-cli": "^6.11.4",
     "babel-core": "^6.9.1",
@@ -55,6 +58,7 @@
     "eslint": "^2.11.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-import-resolver-node": "^0.2.0",
+    "eslint-import-resolver-webpack": "^0.4.0",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-import": "^1.8.1",
     "eslint-plugin-jsx-a11y": "^1.2.2",

@@ -90,38 +90,33 @@ const App = () => <div />;
 
 ###2. Localization
 
-We use Yahoo's React Intl (v2.0) library to support localization. To support new language, follow the steps below:
+We use Yahoo's React Intl (v2.0) library to support localization.
 
-**Step 1**. Update `scripts/translate.js` and add new locale, e.g. `ja-JP`.
+**1**. To support a new locale, update `scripts/translate.js` and add the new locale to the list, e.g. `en-US`.
 ```javascript
 const LANGS = [
     'en-US',
-    'ja-JP',
     'fr-FR',
     'zh-CN',
 ];
 ```
 
-**Step 2**. Run `npm build` to generate the i18n JSON file `i18n/ja-JP.json`. Since it's a new locale, `ja-JP.json` contains the same ids and messages as in `en-US.json`. Translate the messages in `ja-JP.json`.
-
-**Step 3**. Update `src/app.js` and import the `ja-JP.json`.
-```javascript
-import ja from 'react-intl/locale-data/ja';
-import jaMessages from '../i18n/ja-JP.json';
-addLocaleData(ja);
-
-let locale = 'ja';
-let messages = jaMessages;
-const App = () => (
-    <IntlProvider
-        locale={ locale }
-        messages={ messages }
-    >
-    ...
-    </IntlProvider>
-);
+**2**. Specify a `LOCALE` env var in `npm start` to debug for a specific locale:
+```bash
+$ LOCALE=en-US npm start
 ```
-Note: You can have multiple locales and change the locale and messages based on navigator.language or your custom settings.
+
+You can also build the bundle.js for a specific locale:
+```bash
+$ LOCALE=en-US npm run build
+```
+This will output the English bundle.js in `dist/en-US` folder. Note, if you don't specify `LOCALE`, default is `en-US`.
+
+**3**. To build bundle.js for all languages:
+```bash
+$ npm run release
+```
+This will output each supported language bundle.js along with the style sheets in `dist/{locale}` folder.
 
 ###3. Webpack dev server
 When you run your project by `npm start`, webpack dev server watches the source files for changes and when changes are made the bundle will be recompiled.
@@ -178,34 +173,51 @@ The HTML and lcov reports can be found in the coverage folder.
 
 ##What can you do in the scaffolded project
 
-###1. Run the project
+####1. Run the project
 Launch webpack dev server
-```
-npm start
+```bash
+$ npm start
 ```
 then navigate to `http://localhost:5000` in your browser.
 
-###2. Lint js and scss source codes
+####2. Lint js and scss source codes
 ESLint with React linting options have been enabled.
-```
-npm run lint
+```bash
+$ npm run lint
 ```
 
-###3. Unit test
+####3. Unit test
 Start Karma test runner.
-```
-npm run test
+```bash
+$ npm run test
 ```
 Coverage report will be generated.
 
-###4. Build the bundle
+####4. Build the bundle
 Build files for production
 ```
-npm run build
+$ npm run build
 ```
 
-###5. Clean workspace
+####5. Clean workspace
 Remove dist and coverage folders
 ```
-npm run clean
+$ npm run clean
+```
+
+###For localization feature
+
+####1. Hot-load for a lanuage
+```bash
+$ LOCALE=en-US npm start
+```
+
+####2. Build bundle.js for a language
+```bash
+$ LOCALE=en-US npm run build
+```
+
+####3. Build all language bundles
+```bash
+$ npm run release
 ```

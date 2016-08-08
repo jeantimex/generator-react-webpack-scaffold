@@ -48,7 +48,7 @@ module.exports = {
         include: path.join(__dirname, 'src'),
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         loader: ExtractTextPlugin.extract(
           'style',
           'css?sourceMap!sass?sourceMap'
@@ -81,8 +81,7 @@ module.exports = {
 
   // Array of file extensions used to resolve modules.
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.scss'],
-    root: path.resolve(path.join(__dirname, 'src')),
+    extensions: ['', '.js', '.jsx', '.css', '.scss']
   },
 
 };

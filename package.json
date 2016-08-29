@@ -1,6 +1,6 @@
 {
   "name": "generator-react-webpack-scaffold",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "Yeoman generator for generating the boilerplate of React Webpack application with Karma Mocha testing frameworks.",
   "homepage": "https://github.com/jeantimex/generator-react-webpack-scaffold",
   "bugs": {

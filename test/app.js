@@ -78,14 +78,10 @@ describe('generator-react-webpack-scaffold:app with localization feature', funct
       'src/components/styles.scss',
       'test/test.bundle.js',
       'test/components/menu.spec.js',
-      'helpers/intl-enzyme-test-helper.js',
-      'i18n/en-US.json',
-      'i18n/fr-FR.json',
-      'i18n/zh-CN.json',
-      'scripts/lib/printer.js',
-      'scripts/lib/translator.js',
-      'scripts/release.js',
-      'scripts/translate.js'
+      'i18n/en-US.properties',
+      'i18n/zh-CN.properties',
+      'scripts/intl-helper.js',
+      'scripts/release.js'
     ]);
   });
 });
